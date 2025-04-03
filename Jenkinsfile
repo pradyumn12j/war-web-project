@@ -12,6 +12,12 @@ pipeline
     sh('mvn test')
 }
   }}
+        stage("test")
+        {
+            steps{
+                sh('mvn -f pom.xml')
+            }
+        }
     
         stage("skip test")
         {
