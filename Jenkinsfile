@@ -9,7 +9,7 @@ pipeline
         stage(" step")
     {
     steps{withMaven(globalMavenSettingsConfig: '', jdk: 'HOME_JAVA', maven: 'HOME_MVN', mavenSettingsConfig: '', traceability: true) {
-    sh('mvn -f /.pom.xml clean install')
+    sh('mvn -f pom.xml clean install')
 }
   }}
         stage("test")
