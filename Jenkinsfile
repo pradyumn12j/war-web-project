@@ -38,6 +38,15 @@ pipeline
                 sh('docker buildx build -t java121:latest .')
             }
         }
+        stage('docker image upload')
+        {
+            steps{
+                withDockerRegistry(credentialsId: 'DOCKER', url: 'https://index.docker.io/v1/') {
+                    sh('docker push WEBAPP:latest')
+    // some block
+}
+            }
+        }
     
     }
 }
