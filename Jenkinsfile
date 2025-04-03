@@ -42,7 +42,7 @@ pipeline
         {
             steps{
                 withDockerRegistry(credentialsId: 'DOCKER', url: 'https://index.docker.io/v1/') {
-                    sh('docker push pradyumnjawale613/WEBAPP:latest')
+                    sh('docker push pradyumnjawale613/webapps:latest')
     // some block
 }
             }
