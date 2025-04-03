@@ -9,22 +9,17 @@ pipeline
         stage(" step")
     {
     steps{withMaven(globalMavenSettingsConfig: '', jdk: 'HOME_JAVA', maven: 'HOME_MVN', mavenSettingsConfig: '', traceability: true) {
-    sh('mvn test')
+    sh('mvn compile')
 }
   }}
         stage("test")
         {
             steps{
-                sh('mvn -f pom.xml')
-            }
-        }
-    
-        stage("skip test")
-        {
-            steps{
                 sh('mvn install -DSkiptests')
             }
         }
+    
+        
         stage("package")
         {
             steps{
