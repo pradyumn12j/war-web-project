@@ -1,11 +1,11 @@
 pipeline
 {
     agent any
-    {
+    
         tools {
     maven 'Maven 3.6.3'  // Update to the latest version compatible with Java 17
 }
-    }
+    
     stages{
         stage("hey there"){
         steps{git'https://github.com/pradyumn12j/war-web-project.git'}
